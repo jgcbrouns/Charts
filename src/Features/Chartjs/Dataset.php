@@ -97,4 +97,15 @@ trait Dataset
             'label' => $label,
         ]);
     }
+
+    public function labels($labels)
+    {
+        if ($labels instanceof Collection) {
+            $labels = $labels->toArray();
+        }
+
+        return $this->options([
+            'labels' => $labels,
+        ]);
+    }
 }

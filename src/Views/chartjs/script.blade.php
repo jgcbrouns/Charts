@@ -31,6 +31,7 @@
             .then(data => {
                 document.getElementById("{{ $chart->id }}_loader").style.display = 'none';
                 document.getElementById("{{ $chart->id }}").style.display = 'block';
+                {{ $chart->id }}.data.labels = data[0].labels;
                 {{ $chart->id }}.data.datasets = data;
                 {{ $chart->id }}.update();
             });
